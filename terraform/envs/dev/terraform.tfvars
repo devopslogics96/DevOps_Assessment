@@ -1,0 +1,22 @@
+environment                  = "dev"
+aws_region                   = "us-east-1"
+availability_zones           = ["us-east-1a", "us-east-1b"]
+vpc_cidr_block               = "10.10.0.0/16"
+public_subnet_cidr_blocks    = ["10.10.1.0/24", "10.10.2.0/24"]
+private_subnet_cidr_blocks   = ["10.10.11.0/24", "10.10.12.0/24"]
+enable_nat_gateway           = true
+allowed_alb_ipv4_cidr_blocks = ["0.0.0.0/0"]
+alb_certificate_arn          = null
+container_image              = "public.ecr.aws/docker/library/nginx:alpine"
+container_port               = 80
+container_environment        = { APP_ENV = "dev" }
+desired_count                = 1
+task_cpu                     = "256"
+task_memory                  = "512"
+ecs_log_retention_days       = 3
+rds_instance_class           = "db.t3.micro"
+rds_allocated_storage        = 20
+rds_max_allocated_storage    = 50
+rds_backup_retention_period  = 1
+rds_deletion_protection      = false
+rds_multi_az                 = false
